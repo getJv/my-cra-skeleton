@@ -11,6 +11,7 @@ export default function routes() {
    * Mirage JS guide on Resource: https://miragejs.com/docs/route-handlers/shorthands#resource-helper
    */
   this.resource('users');
+  this.resource('organizations');
   this.resource('products');
 
   /*

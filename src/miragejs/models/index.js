@@ -18,5 +18,8 @@ export default {
   messages: Model.extend({
     user: belongsTo(),
   }),
+  organization: Model.extend({
+    user: hasMany(),
+  }),
   product: Model,
 };
