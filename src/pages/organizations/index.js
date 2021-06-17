@@ -3,12 +3,18 @@ import { useEffect } from 'react';
 import { useOrganizationStore } from '../../store/organization';
 
 const OrganizationPage = () => {
-  const { fetchOrganizations } = useOrganizationStore(store => store.actions);
+  const { fetchOrganizations, deleteOrganization } = useOrganizationStore(store => store.actions);
   const { organizations } = useOrganizationStore(store => store.state);
 
   useEffect(() => {
     fetchOrganizations();
   }, []);
+
+  const deleteButton = organization => (
+    <button type={'button'} onClick={() => deleteOrganization(organization)}>
+      Delete
+    </button>
+  );
 
   return (
     <>
@@ -16,7 +22,9 @@ const OrganizationPage = () => {
         <button type={'button'}> Create </button>
       </Link>
       {organizations.map(org => (
-        <p key={org.id}>{org.title}</p>
+        <p key={org.id}>
+          {org.title} {deleteButton(org)}
+        </p>
       ))}
     </>
   );
