@@ -1,16 +1,16 @@
 import { Link } from 'react-router-dom';
 
-const Home = () => {
+const NotFound = () => {
   return (
     <>
-      <h1>Home</h1>
+      <h1>404 Not Found</h1>
       <ul>
         <li>
-          <Link to="/users"> Users Page</Link>
+          <Link to="/"> Go to Home</Link>
         </li>
       </ul>
     </>
   );
 };
 
-export default Home;
+export default NotFound;
