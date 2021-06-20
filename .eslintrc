@@ -19,7 +19,7 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react","prettier","jest"],
+  "plugins": ["react", "prettier", "jest"],
   "rules": {
     "func-names": "off",
     "object-shorthand": "off",
@@ -36,12 +36,11 @@
     "react/jsx-props-no-spreading": "off",
     "react-hooks/exhaustive-deps": "off",
     "react/jsx-filename-extension": "off"
-
   },
   "settings": {
     "import/resolver": {
       "node": {
-        "extensions": [".js",".jsx",".ts",".tsx"]
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
     }
   }
