@@ -1,14 +1,14 @@
+import { Link } from 'react-router-dom';
 import { useFetchUsers } from '../../hooks/user/use-fetch-users';
 import UserList from '../../components/users/user-list';
-import { Link } from 'react-router-dom';
 
 const UserPage = () => {
-  let { users, handleDelete } = useFetchUsers();
+  const { users, handleDelete } = useFetchUsers();
 
   return (
     <>
       <Link to="/users/create">
-        <button type={'button'}> Create </button>
+        <button type="button"> Create </button>
       </Link>
       <UserList users={users} handleDelete={handleDelete} />
     </>

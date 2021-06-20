@@ -1,6 +1,6 @@
-import { useAuthenticationStore } from '../store/auth';
 import { useEffect } from 'react';
 import { Redirect, Route } from 'react-router-dom';
+import { useAuthenticationStore } from '../store/auth';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const { isAuthenticated } = useAuthenticationStore(store => store.state);
@@ -15,9 +15,9 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
       {...rest}
       render={props =>
         isAuthenticated ? (
-          <Component {...props}></Component>
+          <Component {...props} />
         ) : (
-          <Redirect to={{ pathname: '/', state: { from: props.location } }}></Redirect>
+          <Redirect to={{ pathname: '/', state: { from: props.location } }} />
         )
       }
     />

@@ -5,17 +5,15 @@ import { useRoutes } from './use-routes';
 export default function Routes() {
   const { privateRoutes, publicRoutes } = useRoutes();
 
-  const renderPrivateRoutes = () => {
-    return privateRoutes().map(pr => (
+  const renderPrivateRoutes = () =>
+    privateRoutes().map(pr => (
       <PrivateRoute key={pr.path} exact={pr.exact} path={pr.path} component={pr.component} />
     ));
-  };
 
-  const renderPublicRoutes = () => {
-    return publicRoutes().map(pr => (
+  const renderPublicRoutes = () =>
+    publicRoutes().map(pr => (
       <Route key={pr.path} exact={pr.exact} path={pr.path} component={pr.component} />
     ));
-  };
 
   return (
     <Switch>

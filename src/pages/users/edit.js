@@ -1,22 +1,24 @@
-import { useSaveUsers } from '../../hooks/user/use-save-users';
-import UserForm from '../../components/users/user-form';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
+import { useSaveUsers } from '../../hooks/user/use-save-users';
+import UserForm from '../../components/users/user-form';
 import UserService from '../../services/user';
 
 function UserPageEdit() {
   const { handleSubmit, handleCancel, handleChange, setFormData, formData } = useSaveUsers();
   const { id } = useParams();
 
-  useEffect(async () => {
-    let mounted = true;
+  const findUser = async () => {
     try {
       const { data } = await UserService.find(id);
       setFormData(data.user);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
-    return () => (mounted = false);
+  };
+
+  useEffect(async () => {
+    findUser();
   }, [id]);
 
   return (

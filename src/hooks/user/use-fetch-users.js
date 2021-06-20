@@ -5,19 +5,18 @@ export const useFetchUsers = () => {
   const [users, setUsers] = useState([]);
   const [error, setError] = useState(false);
 
-  useEffect(async () => {
-    let mounted = true;
+  const fetchUsers = async () => {
     try {
       const { data } = await userService.all();
-      if (mounted) {
-        setUsers(data.users);
-      }
+
+      setUsers(data.users);
     } catch (e) {
-      if (mounted) {
-        setError(true);
-      }
+      setError(true);
     }
-    return () => (mounted = false);
+  };
+
+  useEffect(() => {
+    fetchUsers();
   }, []);
 
   const handleDelete = async index => {

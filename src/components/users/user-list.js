@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
+
 function UserList({ users, handleDelete }) {
   const editButton = id => (
     <Link to={`/users/${id}/edit`}>
-      <button type={'button'}>Edit</button>
+      <button type="button">Edit</button>
     </Link>
   );
   const deleteButton = index => (
-    <button type={'button'} onClick={() => handleDelete(index)}>
+    <button type="button" onClick={() => handleDelete(index)}>
       Delete
     </button>
   );

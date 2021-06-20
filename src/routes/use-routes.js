@@ -45,13 +45,9 @@ export const useRoutes = () => {
     },
   ];
 
-  const privateRoutes = () => {
-    return routes.filter(route => route.private);
-  };
+  const privateRoutes = () => routes.filter(route => route.private);
 
-  const publicRoutes = () => {
-    return routes.filter(route => !route.private);
-  };
+  const publicRoutes = () => routes.filter(route => !route.private);
 
   return { privateRoutes, publicRoutes };
 };

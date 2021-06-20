@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 export default {
   post: formData => axios.post('/api/users', { user: { ...formData } }),
   patch: formData => axios.patch(`/api/users/${formData.id}`, { user: { ...formData } }),

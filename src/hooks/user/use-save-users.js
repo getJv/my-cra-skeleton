@@ -35,7 +35,7 @@ export const useSaveUsers = () => {
       }
       setSubmitting(false);
       backToListPage();
-    } catch (error) {
+    } catch (e) {
       setError(true);
     }
   };
@@ -48,7 +48,7 @@ export const useSaveUsers = () => {
     });
   };
 
-  const handleCancel = async event => {
+  const handleCancel = async () => {
     backToListPage();
   };
 

@@ -11,7 +11,7 @@ const OrganizationPage = () => {
   }, []);
 
   const deleteButton = organization => (
-    <button type={'button'} onClick={() => deleteOrganization(organization)}>
+    <button type="button" onClick={() => deleteOrganization(organization)}>
       Delete
     </button>
   );
@@ -19,7 +19,7 @@ const OrganizationPage = () => {
   return (
     <>
       <Link to="/organizations/create">
-        <button type={'button'}> Create </button>
+        <button type="button"> Create </button>
       </Link>
       {organizations.map(org => (
         <p key={org.id}>

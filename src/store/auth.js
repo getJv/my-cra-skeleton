@@ -15,20 +15,20 @@ export const useAuthenticationStore = create(set => {
     },
     actions: {
       doLogin: async () => {
-        const { data } = await authenticationService.login();
+        await authenticationService.login();
         setState(({ state }) => {
           state.isAuthenticated = true;
         });
       },
       doLogout: async () => {
-        const { data } = await authenticationService.logout();
+        await authenticationService.logout();
         setState(({ state }) => {
           state.isAuthenticated = false;
         });
       },
       async doAuthVerify() {
         try {
-          const { data } = await authenticationService.verify();
+          await authenticationService.verify();
           setState(({ state }) => {
             state.isAuthenticated = true;
           });
