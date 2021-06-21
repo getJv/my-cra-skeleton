@@ -22,7 +22,7 @@
     "build": "react-scripts build",
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "test:coverage": "jest --coverage",
+    "test:coverage": "clear && jest --coverage",
     "test:unit": "jest --config=jest-unit.config.js",
     "test:unit:watch": "jest --config=jest-unit.config.js --watchAll",
     "test:integration": "jest --config=jest-integration.config.js",
