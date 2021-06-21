@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
@@ -19,7 +19,13 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "test:coverage": "jest --coverage",
+    "test:unit": "jest --config=jest-unit.config.js",
+    "test:unit:watch": "jest --config=jest-unit.config.js --watchAll",
+    "test:integration": "jest --config=jest-integration.config.js",
+    "test:integration:watch": "jest --config=jest-integration.config.js --watchAll",
     "eject": "react-scripts eject",
     "prepare": "husky install"
   },

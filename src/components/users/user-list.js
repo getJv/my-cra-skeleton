@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 function UserList({ users, handleDelete }) {
@@ -12,7 +13,7 @@ function UserList({ users, handleDelete }) {
     </button>
   );
   return (
-    <ul>
+    <ul data-testid="user-list">
       {users.map(({ id, name }, index) => (
         <li key={id}>
           {editButton(id)}
