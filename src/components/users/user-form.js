@@ -1,3 +1,5 @@
+import React from 'react';
+
 function UserForm({ handleSubmit, handleCancel, handleChange, formData }) {
   return (
     <form name="user-form" onSubmit={handleSubmit}>
@@ -10,8 +12,10 @@ function UserForm({ handleSubmit, handleCancel, handleChange, formData }) {
         <input type="text" name="mobile" onChange={handleChange} value={formData.mobile || ''} />
       </label>
       <div>
-        <button type="submit">Save</button>
-        <button type="submit" onClick={handleCancel}>
+        <button type="submit" data-testid="submit-button">
+          Save
+        </button>
+        <button type="button" data-testid="cancel-button" onClick={handleCancel}>
           Cancel
         </button>
       </div>

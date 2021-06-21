@@ -1,14 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-function UserList({ users, handleDelete }) {
+function UserList({ users, handleDelete, handleEdit }) {
   const editButton = id => (
-    <Link to={`/users/${id}/edit`}>
-      <button type="button">Edit</button>
-    </Link>
+    <button data-testid="edit-button" type="button" onClick={() => handleEdit(id)}>
+      Edit
+    </button>
   );
   const deleteButton = index => (
-    <button type="button" onClick={() => handleDelete(index)}>
+    <button data-testid="delete-button" type="button" onClick={() => handleDelete(index)}>
       Delete
     </button>
   );
@@ -17,7 +16,7 @@ function UserList({ users, handleDelete }) {
       {users.map(({ id, name }, index) => (
         <li key={id}>
           {editButton(id)}
-          {deleteButton(index)} | {name}
+          {deleteButton(index)}| {name}
         </li>
       ))}
     </ul>
