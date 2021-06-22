@@ -8,7 +8,6 @@ export const useFetchUsers = () => {
   const fetchUsers = async () => {
     try {
       const { data } = await userService.all();
-
       setUsers(data.users);
     } catch (e) {
       setError(true);
