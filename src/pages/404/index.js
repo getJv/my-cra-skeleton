@@ -1,16 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const NotFound = () => {
+  const history = useHistory();
+  const goToHome = () => {
+    history.push('/');
+  };
   return (
-    <>
+    <div data-testid="not-found-page">
       <h1>404 Not Found</h1>
       <ul>
         <li>
-          <Link to="/"> Go to Home</Link>
+          <div data-testid="go-to-home" aria-hidden="true" onClick={goToHome}>
+            Go to Home
+          </div>
         </li>
       </ul>
-    </>
+    </div>
   );
 };
 
