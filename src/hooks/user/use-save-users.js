@@ -26,6 +26,7 @@ export const useSaveUsers = () => {
 
   const handleSubmit = async event => {
     event.preventDefault();
+
     try {
       setSubmitting(true);
       if (formData.id) {
@@ -40,8 +41,8 @@ export const useSaveUsers = () => {
     }
   };
 
-  const handleChange = async event => {
-    const isCheckbox = event.target.type === 'checkbox';
+  const handleChange = event => {
+    const isCheckbox = event.target?.type === 'checkbox';
     setFormData({
       name: event.target.name,
       value: isCheckbox ? event.target.checked : event.target.value,
